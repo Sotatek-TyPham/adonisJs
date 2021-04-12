@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello Adonis</title>
+</head>
+<body>
+  <h1>list user</h1>
+    <table style="width:50%">
+      <tr>
+        <td>username</td>
+        <td>email</td>
+      </tr>
+      @if(users)
+        @each(user in users)
+          <tr>
+            <td><a href="{{ route('users.detail', { id: user.id }) }}">{{ user.username }}</a></td>
+            <td>{{ user.email }}</td>
+          </tr>
+        @endeach
+      @endif
+    </table>
+  <a href={{ route('users.create') }}>create a user</a>
+</body>
+</html>

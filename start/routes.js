@@ -17,3 +17,10 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+
+Route.group(() => {
+  Route.get('/', 'UserController.index').as('users.index')
+  Route.get('/create', 'UserController.create').as('users.create')
+  Route.post('/', 'UserController.store').as('users.store')
+  Route.get('/:id', 'UserController.detail').as('users.detail')
+}).prefix('users')
