@@ -13,7 +13,7 @@ class DepatmentsSchema extends Schema {
   }
 
   down () {
-    this.drop('depatments')
+    this.dropIfExists('depatments')
   }
 }
 
