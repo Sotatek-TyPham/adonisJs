@@ -24,3 +24,5 @@ Route.group(() => {
   Route.post('/', 'UserController.store').as('users.store')
   Route.get('/:id', 'UserController.detail').as('users.detail')
 }).prefix('users')
+
+Route.post('/media/upload', 'MediaController.upload').as('media.upload')
