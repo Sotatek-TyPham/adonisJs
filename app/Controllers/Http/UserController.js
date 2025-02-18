@@ -42,6 +42,18 @@ class UserController {
 
     return view.render('users.detail', { user: user})
   }
+
+  async function    testFunction( request,response ){
+    const userInput = request.only(['name','email','password'])
+
+    let newUser =new User();
+    newUser.username= userInput.name;
+    newUser.email = userInput.email
+    newUser.password=userInput.password
+
+    await newUser. save ()
+    return response.json({message: "User created!",user: newUser})
+  }
 }
 
 module.exports = UserController
